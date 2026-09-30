@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c1220"/>
+      <stop offset="50%" stop-color="#070a12"/>
+      <stop offset="100%" stop-color="#030509"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="50%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="512" height="512" rx="112" fill="url(#bgGrad)"/>
+  <circle cx="256" cy="220" r="200" fill="url(#halo)"/>
+
+  <!-- Sleek Outer Border -->
+  <rect x="6" y="6" width="500" height="500" rx="106" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="2"/>
+  
+  <!-- Subtle Grid/Coordinate Matrix Lines -->
+  <line x1="128" y1="140" x2="384" y2="140" stroke="rgba(255,255,255,0.04)" stroke-width="2" />
+  <line x1="128" y1="256" x2="384" y2="256" stroke="rgba(255,255,255,0.06)" stroke-width="2" />
+  <line x1="128" y1="372" x2="384" y2="372" stroke="rgba(255,255,255,0.04)" stroke-width="2" />
+  <line x1="256" y1="120" x2="256" y2="392" stroke="rgba(255,255,255,0.06)" stroke-width="2" />
+
+  <!-- Smooth Sine Wave Curve in Background -->
+  <path d="M128 290 Q 192 180, 256 256 T 384 220" fill="none" stroke="rgba(6, 182, 212, 0.25)" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Calculator Screen Preview Capsule -->
+  <rect x="136" y="96" width="240" height="64" rx="12" fill="rgba(15, 23, 42, 0.8)" stroke="rgba(56, 189, 248, 0.2)" stroke-width="2"/>
+  <circle cx="160" cy="128" r="4" fill="#06b6d4"/>
+  <rect x="260" y="122" width="96" height="12" rx="6" fill="#38bdf8" opacity="0.9"/>
+
+  <!-- Iconic Scientific Symbols: Integral, Square Root, Pi, Plus/Minus -->
+  <!-- Bold Integral Symbol with glowing gradient -->
+  <path d="M 210 180 C 235 180, 245 195, 245 220 L 245 320 C 245 345, 235 360, 210 360" 
+        fill="none" stroke="url(#accentGrad)" stroke-width="18" stroke-linecap="round" filter="url(#glow)" />
+
+  <!-- Square Root Symbol & X -->
+  <path d="M 265 295 L 280 340 L 305 210 L 380 210" 
+        fill="none" stroke="url(#glowGrad)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+  
+  <!-- Modern 'x' under square root -->
+  <line x1="325" y1="245" x2="355" y2="285" stroke="#ffffff" stroke-width="10" stroke-linecap="round"/>
+  <line x1="355" y1="245" x2="325" y2="285" stroke="#ffffff" stroke-width="10" stroke-linecap="round"/>
+
+  <!-- Sleek Dot Matrix / Sub-functions -->
+  <circle cx="170" cy="230" r="10" fill="#38bdf8" opacity="0.9"/>
+  <circle cx="170" cy="275" r="10" fill="#818cf8" opacity="0.9"/>
+  <circle cx="170" cy="320" r="10" fill="#c084fc" opacity="0.9"/>
+
+  <!-- Modern Infinity / Golden Ratio Accent at Bottom -->
+  <path d="M 220 410 C 200 410 180 395 200 380 C 220 365 240 425 260 410 C 280 395 300 410 280 425 C 260 440 240 380 220 395" 
+        fill="none" stroke="rgba(148, 163, 184, 0.4)" stroke-width="5" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,6 @@
+{
+  "name": "AetherCalc Pro - Sleek Scientific PWA",
+  "description": "A modern, sleek scientific and graphing calculator Progressive Web App with advanced scientific functions, programming modes, unit conversions, and offline capability.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
