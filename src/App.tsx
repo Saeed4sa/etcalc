@@ -20,6 +20,7 @@ import { UnitsAndConstantsView } from './components/UnitsAndConstantsView';
 import { StatsAndMatrixView } from './components/StatsAndMatrixView';
 import { HistoryDrawer } from './components/HistoryDrawer';
 import { KeyboardGuideModal } from './components/KeyboardGuideModal';
+import { SingleFileExportModal } from './components/SingleFileExportModal';
 import { OfflineIndicator } from './components/OfflineIndicator';
 import {
   evaluateExpression,
@@ -71,6 +72,7 @@ export default function App() {
   });
   const [isHistoryOpen, setIsHistoryOpen] = useState(false);
   const [isKeyboardGuideOpen, setIsKeyboardGuideOpen] = useState(false);
+  const [isSingleFileExportOpen, setIsSingleFileExportOpen] = useState(false);
 
   // Save history to localStorage
   useEffect(() => {
@@ -338,6 +340,7 @@ export default function App() {
         toggleHistory={() => setIsHistoryOpen(!isHistoryOpen)}
         isHistoryOpen={isHistoryOpen}
         openKeyboardGuide={() => setIsKeyboardGuideOpen(true)}
+        openSingleFileExport={() => setIsSingleFileExportOpen(true)}
         currentTheme={theme}
         setTheme={setTheme}
       />
@@ -460,6 +463,12 @@ export default function App() {
       <KeyboardGuideModal
         isOpen={isKeyboardGuideOpen}
         onClose={() => setIsKeyboardGuideOpen(false)}
+      />
+
+      {/* Standalone Single File HTML Export Modal */}
+      <SingleFileExportModal
+        isOpen={isSingleFileExportOpen}
+        onClose={() => setIsSingleFileExportOpen(false)}
       />
 
       {/* Offline Toast Indicator */}

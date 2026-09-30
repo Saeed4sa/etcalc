@@ -11,6 +11,7 @@ import {
   Keyboard,
   Palette,
   Check,
+  FileCode,
 } from 'lucide-react';
 import { CalculatorMode, AngleUnit, NotationFormat, ThemeName } from '../types/calculator';
 import { PWAInstallButton } from './PWAInstallButton';
@@ -29,6 +30,7 @@ interface HeaderProps {
   toggleHistory: () => void;
   isHistoryOpen: boolean;
   openKeyboardGuide: () => void;
+  openSingleFileExport: () => void;
   currentTheme: ThemeName;
   setTheme: (theme: ThemeName) => void;
 }
@@ -46,6 +48,7 @@ export const Header: React.FC<HeaderProps> = ({
   toggleHistory,
   isHistoryOpen,
   openKeyboardGuide,
+  openSingleFileExport,
   currentTheme,
   setTheme,
 }) => {
@@ -251,6 +254,17 @@ export const Header: React.FC<HeaderProps> = ({
               {historyCount}
             </span>
           )}
+        </button>
+
+        {/* Single File HTML Export Button */}
+        <button
+          onClick={openSingleFileExport}
+          className="flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium bg-cyan-950/60 text-cyan-300 border border-cyan-800/50 hover:bg-cyan-900/60 hover:border-cyan-500/40 transition-colors shadow-xs"
+          title="Download or copy complete standalone single-file HTML"
+        >
+          <FileCode className="w-3.5 h-3.5 text-cyan-400" />
+          <span className="hidden sm:inline">Single-File HTML</span>
+          <span className="sm:hidden">.HTML</span>
         </button>
 
         {/* PWA In-App Install Button */}
